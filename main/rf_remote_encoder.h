@@ -22,7 +22,7 @@ extern "C" {
  *      - ESP_ERR_NO_MEM out of memory when creating led strip encoder
  *      - ESP_OK if creating encoder successfully
  */
-esp_err_t rmt_new_rf_remote_encoder(const rf_remote_encoder_config_t *config, rmt_encoder_handle_t *ret_encoder);
+esp_err_t rmt_new_rf_remote_encoder(rf_remote_encoder_config_t *config, rmt_encoder_handle_t *ret_encoder);
 
 #ifdef __cplusplus
 }
