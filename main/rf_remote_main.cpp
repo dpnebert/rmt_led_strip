@@ -21,7 +21,7 @@
 
 extern "C" void app_main();
 
-static const char *TAG = "example";
+static const char *TAG = "rf_remote_main";
 
 
 rmt_rf_remote_t* rf_rmt = new rmt_rf_remote_t();
@@ -31,7 +31,7 @@ uint64_t payload[1];
 
 
 void initRMT() {
-    ESP_LOGI(TAG, "Create RMT TX channel config");
+    ESP_LOGI(TAG, "Create RMT TX channel");
     rmt_tx_channel_config_t tx_chan_config = {
         .gpio_num = (gpio_num_t)RMT_RF_REMOTE_GPIO_NUM,
         .clk_src = RMT_CLK_SRC_DEFAULT, // select source clock
@@ -128,8 +128,6 @@ void app_main(void)
 
 
 
-        vTaskDelay(1000 / portTICK_PERIOD_MS);
-
         ESP_LOGI(TAG, "Enable RMT TX channel");
         ret = rmt_enable(rf_rmt->channel_handle);
         if(ESP_OK != ret) {
@@ -139,5 +137,7 @@ void app_main(void)
             ESP_LOGI(TAG, "RMT TX channel enabled");
         }
         
+
+        vTaskDelay(1000 / portTICK_PERIOD_MS);
     }
 }
