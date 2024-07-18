@@ -31,7 +31,7 @@ uint64_t payload[1];
 
 
 void initRMT() {
-    ESP_LOGI(TAG, "Create RMT TX channel");
+    ESP_LOGI(TAG, "Create RMT TX channel config");
     rmt_tx_channel_config_t tx_chan_config = {
         .gpio_num = (gpio_num_t)RMT_RF_REMOTE_GPIO_NUM,
         .clk_src = RMT_CLK_SRC_DEFAULT, // select source clock
