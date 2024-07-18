@@ -3,17 +3,14 @@
 
 #include <stdint.h>
 #include "driver/rmt_encoder.h"
+#include "rf_remote_encoder_config_t.h"
+#include "rf_remote_payload_t.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-/**
- * @brief Type of led strip encoder configuration
- */
-typedef struct {
-    uint32_t resolution; /*!< Encoder resolution, in Hz */
-} rf_remote_encoder_config_t;
+
 
 /**
  * @brief Create RMT encoder for encoding LED strip pixels into RMT symbols
